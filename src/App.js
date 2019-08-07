@@ -1,8 +1,11 @@
 import React from 'react';
+import Container from './container';
 import './App.css';
 
 export class App extends React.Component {
   render() {
-    return <h1>Hello, Shantanu</h1>
+    return (
+      <Container />
+    )
   }
 }
