@@ -8,6 +8,6 @@ export default class Result extends React.Component {
     }
 
     render() {
-        return <div id="result"></div>
+        return <div id="result">{this.props.value}</div>
     }
 }
