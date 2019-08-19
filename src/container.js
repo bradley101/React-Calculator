@@ -17,13 +17,19 @@ export default class Container extends React.Component {
     }
 
     num_click(num) {
-        console.log('reached')
-        this.state.current_num += num;
+        var t = this.state.current_num
+        this.setState({
+            current_num: t + num
+        })
+        console.log(this.state)
     }
 
     operator_click(operator) {
         this.operator_click_intermediate(this.state.operator);
-        this.state.operator = operator;
+        this.setState({
+            operator: operator
+        })
+        console.log(this.state)
     }
 
     operator_click_intermediate(operator) {
@@ -55,12 +61,12 @@ export default class Container extends React.Component {
                     <Button value='8' symbol='8' click={this.num_click} />
                     <Button value='9' symbol='9' click={this.num_click} />
                     <Button value='0' symbol='0' click={this.num_click} />
-                    <Button value='dec' symbol='.' />
-                    <Button value='eq' symbol='=' />
-                    <Button value='plus' symbol='+' />
-                    <Button value='minus' symbol='-' />
-                    <Button value='mul' symbol='*' />
-                    <Button value='div' symbol='/' />
+                    <Button value='dec' symbol='.' click={this.operator_click}/>
+                    <Button value='eq' symbol='='  click={this.operator_click}/>
+                    <Button value='plus' symbol='+'  click={this.operator_click}/>
+                    <Button value='minus' symbol='-'  click={this.operator_click}/>
+                    <Button value='mul' symbol='*'  click={this.operator_click}/>
+                    <Button value='div' symbol='/'  click={this.operator_click}/>
                 </div>
             </div>
         )
